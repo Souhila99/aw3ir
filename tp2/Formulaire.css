@@ -7,7 +7,7 @@ body {
     max-width: 800px;
 }
 .error{
-    background-color:red;
+    background-color:pink;
     padding: 5px; 
     border: 1px;
     border-color: black;

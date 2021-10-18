@@ -13,16 +13,16 @@ function validation() {
     document.getElementById("error").innerHTML = "";
 
     if (nom.length < 5) {
-        document.getElementById("error").innerHTML = "La saisie du nom est obligatoire <br>";
+        document.getElementById("error").innerHTML = "La saisie du nom est obligatoire ! <br>";
     }
     if (prenom.length < 5) {
-        document.getElementById("error").innerHTML += "La saisie du prénom est obligatoire <br>";
+        document.getElementById("error").innerHTML += "La saisie du prénom est obligatoire ! <br>";
     }
     if (date.length < 5) {
-        document.getElementById("error").innerHTML += "La saisie de la date de naissance est obligatoire <br>";
+        document.getElementById("error").innerHTML += "La saisie de la date de naissance est obligatoire ! <br>";
     }
     if (adress.length < 5) {
-        document.getElementById("error").innerHTML += "La saisie de l'adresseest obligatoire <br>";
+        document.getElementById("error").innerHTML += "La saisie de l'adresseest obligatoire ! <br>";
     }
     if (mail.length < 5) {
         document.getElementById("error").innerHTML += "La saisie du Mail est obligatoire";

@@ -23,24 +23,25 @@
     <fieldset>
         <h1>Saisie d'une fiche "Personne"</h1>
         <!-- Add your site or application content here -->
-        <form method="post" action="/action_page.php">
-            <label for="nom">Nom:</label><br>
-            <input type="text" id="nom" name="nom" minlength="5" placeholder="ex: Martin "><br>
-            <label for="prenom">Prénom:</label><br>
-            <input type="text" id="prenom" name="prenom" placeholder="ex: Kamille"><br><br>
-            <label for="date">Date de naissance: </label><br>
-            <input type="date" id="date" name="date" placeholder="JJ/MM/AAAA"><br><br>
-            <label for="adress">Adresse: </label><br>
-            <input type="text" id="adress" name="adress" placeholder="tapez votre adresse"><br><br>
-            <label for="mail">Mail: </label><br>
-            <input type="text" id="mail" name="mail" placeholder="votre adresse mail"><br><br>
-            <input type="button" value="Valider" onclick="validation()">
+        <table>
+            <form id="formulaire" method="post" action="/action_page.php">
+                <label for="nom">Nom:</label><br>
+                <input type="text" id="nom" name="nom" minlength="5" placeholder="ex: Martin "><br>
+                <label for="prenom">Prénom:</label><br>
+                <input type="text" id="prenom" name="prenom" placeholder="ex: Kamille"><br><br>
+                <label for="date">Date de naissance: </label><br>
+                <input type="date" id="date" name="date" placeholder="JJ/MM/AAAA"><br><br>
+                <label for="adress">Adresse: </label><br>
+                <input type="text" id="adress" name="adress" placeholder="tapez votre adresse"><br><br>
+                <label for="mail">Mail: </label><br>
+                <input type="text" id="mail" name="mail" placeholder="votre adresse mail"><br><br>
+                <input type="button" value="Valider" onclick="validation()">
 
-            <div id="error" class="error"  ></div>
-        <div id="result" class="result"  ></div>
+                <div id="error" class="error"></div>
+                <div id="result" class="result"></div>
+            </form>
+        </table>
     </fieldset>
-        </form>
-        
 </body>
 
 </html>

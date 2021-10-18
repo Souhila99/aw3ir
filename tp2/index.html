@@ -1,33 +1,46 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP2</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AW_TP2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="js/main.js"></script>-->
-    </head>
-    <body>        
-        <h1>tp2</h1>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="Formulaire.css">
+    <script type="text/javascript" src="Formulaire.js"></script>
+
+
+    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
+    <!--<link rel="stylesheet" href="style.css">-->
+    <!--<script src="js/main.js"></script>-->
+</head>
+
+<body>
+    <fieldset>
+        <h1>Saisie d'une fiche "Personne"</h1>
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+        <form method="post" action="/action_page.php">
+            <label for="nom">Nom:</label><br>
+            <input type="text" id="nom" name="nom" minlength="5" placeholder="ex: Martin "><br>
+            <label for="prenom">Prénom:</label><br>
+            <input type="text" id="prenom" name="prenom" placeholder="ex: Kamille"><br><br>
+            <label for="date">Date de naissance: </label><br>
+            <input type="date" id="date" name="date" placeholder="JJ/MM/AAAA"><br><br>
+            <label for="adress">Adresse: </label><br>
+            <input type="text" id="adress" name="adress" placeholder="tapez votre adresse"><br><br>
+            <label for="mail">Mail: </label><br>
+            <input type="text" id="mail" name="mail" placeholder="votre adresse mail"><br><br>
+            <input type="button" value="Valider" onclick="validation()">
+
+            <div id="error" class="error"  ></div>
+        <div id="result" class="result"  ></div>
+    </fieldset>
+        </form>
+        
+</body>
+
 </html>

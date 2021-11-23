@@ -1,0 +1,17 @@
+body {
+    background-color: #92aacc;
+    font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 800px;
+    
+}
+* {
+    box-sizing: border-box;
+  }
+.container {
+    border-radius: 5px;
+    background-color: #342b4400;
+    padding: 20px;
+  }
+  

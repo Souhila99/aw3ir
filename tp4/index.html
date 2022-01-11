@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP3</title>
+    <title>TP4</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,32 +21,36 @@
     <link rel="stylesheet" href="css/formulaire.css">
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/form-validation.js"></script>
+    <script src="js/gps.js"></script>
+    <script src="js/store.js"></script>
 </head>
 
 <body>
-    <h1>TP3 AW Formulaires avec Bootstrap</h1>
+    <h1>Ajouter un contact</h1>
 
     <div class="container">
-        <!-- Content here --> 
+        <!-- Content here -->
         <!-- Add your site or application content here -->
         <form>
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Nom</label>
                 <div class="col-sm-10">
-                    <input type="nom" class="form-control form-control-lg" id="nom" placeholder="Nom">
+                    <input type="nom" class="form-control form-control-lg" id="nom" placeholder="Nom" onkeypress="calcNbChar(this.id)" >
+                    <span></span>
                 </div>
             </div>
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Prénom</label>
                 <div class="col-sm-10">
-                    <input type="prenom" class="form-control form-control-lg" id="prenom" placeholder="Prénom">
+                    <input type="prenom" class="form-control form-control-lg" id="prenom" placeholder="Prénom" onkeypress="calcNbChar(this.id)" >
+                    <span></span>
                 </div>
             </div>
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Date De Naissance</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control form-control-lg" id="datedenaissance"
-                        placeholder="JJ/MM/AAAA">
+                    <input type="date" class="form-control form-control-lg" id="datedenaissance" placeholder="JJ/MM/AAAA" onkeypress="calcNbChar(this.id)" >
+                    <span></span>
                 </div>
             </div>
             <div class="row">
@@ -54,16 +58,22 @@
                 <div class="col-sm-10">
                     <input type="adresse" class="form-control form-control-lg" id="adresse" placeholder="Adresse">
                 </div>
+                <div style="position: relative; float: right;">
+                    <button onclick="getLocation()">GPS</button>
+                </div>
+
             </div>
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control form-control-lg" id="email" placeholder="email">
+                    <input type="email" class="form-control form-control-lg" id="email" placeholder="email" onkeypress="calcNbChar(this.id)" >
+                    <span></span>
                 </div>
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Valider</button>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
             </div>
+            <div id="map"></div>
         </form>
     </div>
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,6 +92,10 @@
             </div>
         </div>
 
+    </div>
+    <div>
+        <h1>Liste des contacts</h1>
+        <table><tbody></tbody></table>
     </div>
 </body>
 

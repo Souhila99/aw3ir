@@ -2,27 +2,27 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
     // voir plus : https://www.w3schools.com/js/js_htmldom.asp
     console.log("DOM ready!");
     // Y mettre le code Javascript pour valider tous les champs du formulaire
-    const nom = document.getElementById("nom").value;
-    const prenom = document.getElementById("prenom").value;
-    const datedenaissance = document.getElementById("datedenaissance").value;
-    const adresse = document.getElementById("adresse").value;
-    const email = document.getElementById("email").value;
-    console.log("nom", nom);
-    console.log("prenom", prenom);
-    console.log("datedenaissance", datedenaissance);
-    console.log("adresse", adresse);
-    console.log("email", email);
+
     var myModal = new bootstrap.Modal(document.getElementById('myModal'));
 
     document.querySelector("form").addEventListener("submit", function (event) {
         event.preventDefault();
         console.log("form submitted!");
-
+        const nom = document.getElementById("nom").value;
+        const prenom = document.getElementById("prenom").value;
+        const datedenaissance = document.getElementById("datedenaissance").value;
+        const adresse = document.getElementById("adresse").value;
+        const email = document.getElementById("email").value;
+        console.log("nom", nom);
+        console.log("prenom", prenom);
+        console.log("datedenaissance", datedenaissance);
+        console.log("adresse", adresse);
+        console.log("email", email);
 
         
 
 
-        if (document.getElementById("nom").value.length < 5) {
+        if (nom.length < 5) {
             console.log("nom error");
             document.querySelector(".modal-title").textContent = "Erreur"
 
@@ -32,7 +32,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         }
     
     
-        else if (document.getElementById("prenom").value.length < 5) {
+        else if (prenom.length < 5) {
             console.log("prenom error");
             
             document.querySelector(".modal-title").textContent = "Erreur"
@@ -43,7 +43,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
 
 
         }
-        else if (document.getElementById("adresse").value.length < 5) {
+        else if (adresse.length < 5) {
             console.log("adresse error");
             
             document.querySelector(".modal-title").textContent = "Erreur"
@@ -54,7 +54,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
 
 
         }
-        else if (validateDate(document.getElementById("datedenaissance").value) == false) {
+        else if (validateDate(datedenaissance.value) == false) {
             console.log("Date error");
             document.querySelector(".modal-title").textContent = "Erreur";
             document.querySelector(".modal-body").textContent = "VOUS VENEZ DU FUTURE !!! Veuillez saisir une date de naissance valide";
@@ -94,17 +94,17 @@ function validateDate() {
 
 
 };
-var pos = document.getElementById("map");
+var x = document.getElementById("adresse");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
     } else {
-        pos.innerHTML = "Geolocation is not supported by this browser.";
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
 };
 
 function showPosition(position) {
-    pos.innerHTML = "Latitude: " + position.coords.latitude +
+    x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
 };
 function calcNbChar(id) {

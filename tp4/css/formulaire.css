@@ -14,4 +14,21 @@ body {
     background-color: #342b4400;
     padding: 20px;
   }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
   
+  td, th, tbody {
+    border: 1px solid rgb(0, 0, 0);
+    text-align: left;
+    padding: 10px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #8d647b;
+  }
+  img {
+    width : 200;
+  }

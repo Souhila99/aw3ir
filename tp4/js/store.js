@@ -7,8 +7,8 @@ Pour récuper la liste:    contactStore.getList();
 */
 var contactStore = (function () {
     // variable privée
-    var contactList = [];
     
+    var contactList = [];
     // Expose these functions via an interface while hiding
     // the implementation of the module within the function() block
   
@@ -29,8 +29,7 @@ var contactStore = (function () {
             console.log(contactList[index].datedenaissance);
             console.log(contactList[index].adresse);
             console.log(contactList[index].email);
-            document.querySelector("table tbody").innerHTML =
-    document.querySelector("table tbody").innerHTML + "<tr><td>" + _name + "</><td>" + _firstname + "</td><td>" + _date+ "</td><td>" + _adress + "</td><td>" + _mail + "</td></tr>";
+    
           }
         return contactList;
       },
@@ -40,4 +39,4 @@ var contactStore = (function () {
       },
     };
 
-  });
+  })();

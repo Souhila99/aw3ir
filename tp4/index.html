@@ -35,21 +35,32 @@
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Nom</label>
                 <div class="col-sm-10">
-                    <input type="nom" class="form-control form-control-lg" id="nom" placeholder="Nom" onkeypress="calcNbChar(this.id)" >
+                    <input type="nom" class="form-control form-control-lg" id="nom" placeholder="Nom"
+                        onkeypress="calcNbChar(this.id)">
                     <span></span>
                 </div>
             </div>
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Prénom</label>
                 <div class="col-sm-10">
-                    <input type="prenom" class="form-control form-control-lg" id="prenom" placeholder="Prénom" onkeypress="calcNbChar(this.id)" >
+                    <input type="prenom" class="form-control form-control-lg" id="prenom" placeholder="Prénom"
+                        onkeypress="calcNbChar(this.id)">
                     <span></span>
                 </div>
             </div>
             <div class="row">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Date De Naissance</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control form-control-lg" id="datedenaissance" placeholder="JJ/MM/AAAA" onkeypress="calcNbChar(this.id)" >
+                    <input type="date" class="form-control form-control-lg" id="datedenaissance"
+                        placeholder="JJ/MM/AAAA" onkeypress="calcNbChar(this.id)">
+                    <span></span>
+                </div>
+            </div>
+            <div class="row">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control form-control-lg" id="email" placeholder="email"
+                        onkeypress="calcNbChar(this.id)">
                     <span></span>
                 </div>
             </div>
@@ -57,21 +68,13 @@
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Adresse</label>
                 <div class="col-sm-10">
                     <input type="adresse" class="form-control form-control-lg" id="adresse" placeholder="Adresse">
-                    <button onclick="getLocation()">GPS</button>
+                    <button class="btn btn-warning" id = "gps" onclick="getLocation()"> 📍 GPS</button>
                 </div>
-
-            </div>
-            <div class="row">
-                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control form-control-lg" id="email" placeholder="email" onkeypress="calcNbChar(this.id)" >
-                    <span></span>
-                </div>
+                <div id="map"></div>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Ajouter</button>
             </div>
-            <div id="map"></div>
         </form>
     </div>
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,7 +96,16 @@
     </div>
     <div>
         <h1>Liste des contacts</h1>
-        <table><tbody></tbody></table>
+        <table>
+            <tr>
+                <th>NOM</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Adresse mail</th>
+                <th>Adresse</th>
+            </tr>
+            <tbody></tbody>
+        </table>
     </div>
 </body>
 

@@ -67,7 +67,8 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
             document.querySelector(".modal-body").innerHTML = " vous êtes nés le :" + document.getElementById("datedenaissance").value + " et vous habitez à ";
             document.querySelector(".modal-bodyi").innerHTML = '<a href="http://maps.google.com/maps?q=Paris"><img src="https://maps.googleapis.com/maps/api/staticmap?markers=Paris&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"/> </a>';
               
-            ontactStore.add(nom,prenom,datedenaissance,adresse, email);
+            contactStore.add(nom,prenom,datedenaissance, email,adresse);
+            document.querySelector("table tbody").innerHTML = document.querySelector("table tbody").innerHTML + "<tr><td>" + nom + "</td><td>" + prenom + "</td><td>" + datedenaissance+ "</td><td>" + adresse + "</td><td>" + email + "</td><td>";
               myModal.show();
             
         }
@@ -94,19 +95,7 @@ function validateDate() {
 
 
 };
-var x = document.getElementById("adresse");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-};
 
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-};
 function calcNbChar(id) {
     document.querySelector(`#${id} + span`).textContent = document.querySelector(`#${id}`).value.length;
 };

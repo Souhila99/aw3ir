@@ -12,7 +12,7 @@ export class MeteoService {
 
     let m = new MeteoItem();
 
-    return fetch('https://api.openweathermap.org/data/2.5/weather/?q=' + name + '&units=metric&lang=fr&appid=VOTRE_CLE_OPENWEATHERMAP')
+    return fetch('https://api.openweathermap.org/data/2.5/weather/?q=' + name + '&units=metric&lang=fr&appid=4b46c4c666cbdd2929bdc689cba0efd2')
       .then(function (response) {
         return response.json();
       })

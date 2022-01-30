@@ -1,5 +1,5 @@
-export class MeteoItem {
-    id: number | undefined;
-    name: string | undefined;
+export interface MeteoItem {
+    id: number;
+    name: string;
     weather: any
 }

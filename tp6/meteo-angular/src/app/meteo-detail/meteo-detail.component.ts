@@ -17,8 +17,7 @@ export class MeteoDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private meteoService: MeteoService,
-    private location: Location,
-    private datePipe: DatePipe
+    private location: Location
   ) {}
 
   ngOnInit() {
@@ -26,17 +25,12 @@ export class MeteoDetailComponent implements OnInit {
   }
 
   getMeteo(): void {
-    const name = this.route.snapshot.paramMap.get('name'); 
-    // pour lire la paramètre 'name' dans l'URL de la page  comme définit dans le router avec
-    // path: 'meteo/:name'
-
+    const name = this.route.snapshot.paramMap.get('name');
     console.log('getmeteo',name);
-    if(name)
-    {
-      this.meteoService.getMeteo(name)
+    if(name!=null){
+    this.meteoService.getMeteo(name)
       .then(meteo => this.meteo = meteo)
       .catch(fail => this.meteo = fail);
-    }
   }
-
+  }
 }
